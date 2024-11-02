@@ -1,0 +1,136 @@
+@font-face {
+  font-family: roboto;
+  src: url(../assets/font/Roboto/Roboto-BoldItalic.ttf);
+}
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  align-items: center;
+  background: #5181f0;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  font-size: 100%;
+  font-family: roboto;
+  font-weight: 700;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.todo-app {
+  margin: 50px auto;
+  background: #fff;
+  padding: 15px 20px;
+  width: 98%;
+  max-width: 750px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px orangered, -1px -1px 3px red;
+  text-align: center;
+}
+.todo-app .h1 {
+  margin: 20px auto;
+  font-size: 4rem;
+  text-shadow: 5px 5px orangered;
+  letter-spacing: 0.1em;
+}
+.todo-app .sup {
+  margin: 10px auto;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.todo-app .app {
+  background: #222;
+  color: #f1f1f0;
+  border-radius: 20px;
+  padding: 15px 10px;
+}
+.todo-app form {
+  margin: 20px auto;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 20px auto;
+  flex-direction: column;
+}
+.todo-app form input {
+  width: 100%;
+  border: 1px solid #000;
+  padding: 11px 5px;
+  margin: 11px auto;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  transition: 500s ease-in;
+}
+.todo-app form input:focus,
+.todo-app form input:hover {
+  border: 2px solid red;
+}
+.todo-app form button {
+  padding: 10px 20px;
+  margin: 16px auto;
+  display: block;
+  border: none;
+  width: 150px;
+  background: orangered;
+  border-radius: 11px;
+  transition: 0.2s ease-in-out;
+}
+.todo-app form button img {
+  width: 15px;
+  margin-right: 5px;
+}
+.todo-app form button:hover {
+  background: linear-gradient(to right, rgba(243, 13, 5, 0.4), rgba(9, 94, 242, 0.5));
+}
+.todo-app .todo-list {
+  display: block;
+  width: 100%;
+  background: #222;
+}
+.todo-app .todo-list .box {
+  margin: 15px auto;
+  background: white;
+  color: #000;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+.todo-app .todo-list .box .con h2 {
+  margin: 15px;
+  font-family: sans-serif;
+  font-size: 1.8rem;
+}
+.todo-app .todo-list .box .con h2 span {
+  font-size: 1.2rem;
+}
+.todo-app .todo-list .box .con2 button {
+  background: transparent;
+  border: none;
+  margin: 15px auto;
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: 0.2s ease-in;
+}
+.todo-app .todo-list .box .con2 button img {
+  width: 20px;
+}
+.todo-app .todo-list .box .con2 .del:hover,
+.todo-app .todo-list .box .con2 .del:focus {
+  background: red;
+}
+.todo-app .todo-list .box .con2 .done:hover,
+.todo-app .todo-list .box .con2 .done:focus {
+  background: navy;
+}/*# sourceMappingURL=main.css.map */

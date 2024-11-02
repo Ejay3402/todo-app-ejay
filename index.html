@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
+
+    <div class="todo-app">
+
+        <h1 class="h1">ToDo App</h1>
+
+        <h3 class="sup">Track your day with us</h3>
+
+        <h3 class="sup">Also you can set the date and the time of your Todo if you want to</h3>
+
+        <div class="app">
+
+            <form >
+                <input title="task" type="text" placeholder="Enter Your Task for the Day" id="todo-text" autocomplete="off">
+                <input id="todo-date" title="date" type="date">
+                <input id="todo-time" title="time" type="time" placeholder="time">
+                <button id="todo-btn"><img src="assets/icons/plus-solid.svg" alt="plus-solid"> Add</button>
+            </form>
+
+            <h1 id="noTask"></h1>
+            <div class="todo-list" id="todo-list">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script defer src="js/main.js"></script>
+    
+</body>
+</html>
