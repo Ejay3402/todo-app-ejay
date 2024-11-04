@@ -7,11 +7,16 @@ const todoTime = document.getElementById(`todo-time`);
 const noTask = document.getElementById(`noTask`);
 const todoListApp = document.getElementById(`todo-list`); 
 
+//store todo
+let store2 = JSON.parse(localStorage.getItem('todoStore'));
+console.log(store2);
+
+
 //todo lists
 let todoList = [];
 
 const makeTudoList = () => {
-    let todoHtnl = ``;
+    let todoHtnl  = ``;
     todoList.forEach((data, i) => {
         let val1 = data[0];
         let val2 = data[1];
@@ -20,7 +25,7 @@ const makeTudoList = () => {
         let val = `
                      <div class="box">
                         <div class="con">
-                            <h2>Task : <span id="task">${val1}</span></h2>
+                            <h2>Task : <span id="task">${val1 || store2[0]}</span></h2>
                             <h2>Date : <span  id="date">${val2}</span></h2>
                             <h2>Time : <span id="time">${val3}</span></h2>
                         </div>
@@ -40,9 +45,20 @@ const makeTudoList = () => {
         
     })
     todoListApp.innerHTML = todoHtnl;
-
+    //storing the todplists
+    let store = localStorage.setItem('todoStore', JSON.stringify(todoList));
+    
 };
 
+//this is to keep the todo list on the page even on reload
+if (store2) {
+    todoList = store2;
+    console.log(todoList.length); 
+    makeTudoList();
+}
+
+
+//makeTudoList();
 const todo = (e) => {
     let todoTextVal = todoText.value;
     let todoDateVal = todoDate.value;
@@ -77,8 +93,6 @@ const todo = (e) => {
         }
         
         todoList.push([todoTextVal, doDate, doTime]);
-        console.log(todoList);
-        
         
         todoText.value = ``;
         todoDate.value = ``;
@@ -92,54 +106,3 @@ todoBtn.addEventListener("click", (e) => {
     e.preventDefault();
     todo();
 })
-
-/* 
-//make tudo
-const makeTudo = () => {
-    let todolistHtml = ``;
-
-    todoList.forEach((val, i) => {
-        let val2 = `
-        <div>
-            <h2>${val[0]}</h2>
-            <h3>${val[1]}</h3>
-            <button onclick="
-                todoList.splice(${i}, 1);
-                makeTudo();
-            ">Delete</button>
-        </div>`;
-
-        todolistHtml += val2;
-    });
-    
-    todolistDiv.innerHTML = todolistHtml;
-};
-makeTudo();
-
-//get todo details
-
-const tudo = () => {
-
-    if (todo_title.value <= 0 || todo_title.value == ``) {
-        console.log('add a title');
-    } else {
-        let title = todo_title.value;
-        let date = todo_date.value;
-        title = String(title);
-/*         if (date == 0) {
-            date = new Date();
-            date = String(date);
-            todoList.push([title, date]);
-        } else {
-            date = String(date);
-            todoList.push([title, date]);
-        } 
-        date = String(date);
-        todoList.push([title, date]);
-        console.log(todoList);
-        todo_title.value = ``;    
-        todo_date.value = ``;
-    }
-    makeTudo();
-};
- */

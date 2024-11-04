@@ -13,7 +13,7 @@
 
 body {
   align-items: center;
-  background: #5181f0;
+  background: #111;
   display: flex;
   height: auto;
   justify-content: center;
@@ -29,7 +29,8 @@ input {
 
 .todo-app {
   margin: 50px auto;
-  background: #fff;
+  background: #444;
+  color: #f1f1f0;
   padding: 15px 20px;
   width: 98%;
   max-width: 750px;
@@ -39,7 +40,8 @@ input {
 }
 .todo-app .h1 {
   margin: 20px auto;
-  font-size: 4rem;
+  font-size: 2rem;
+  font-size: clamp(2rem, 0.8rem + 6vw, 4rem);
   text-shadow: 5px 5px orangered;
   letter-spacing: 0.1em;
 }
