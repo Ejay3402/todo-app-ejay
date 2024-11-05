@@ -6,6 +6,7 @@ const todoDate = document.getElementById(`todo-date`);
 const todoTime = document.getElementById(`todo-time`);
 const noTask = document.getElementById(`noTask`);
 const todoListApp = document.getElementById(`todo-list`); 
+const completedTask = document.getElementById(`completed-task`); 
 
 //store todo
 let store2 = JSON.parse(localStorage.getItem('todoStore'));
@@ -23,15 +24,17 @@ const makeTudoList = () => {
         let val3 = data[2];
 
         let val = `
-                     <div class="box">
+                     <div class="box row">
                         <div class="con">
                             <h2>Task : <span id="task">${val1 || store2[0]}</span></h2>
                             <h2>Date : <span  id="date">${val2}</span></h2>
                             <h2>Time : <span id="time">${val3}</span></h2>
                         </div>
     
-                        <div class="con2">
-                            <button class="done" title="done with the task"><img src="assets/icons/check-solid.svg" alt="done"></button>
+                        <div class="con2 ">
+                            <button onclick="
+                                completedTask.textContent = 'Completed';
+                            " class="done" title="done with the task"><img src="assets/icons/check-solid.svg" alt="done"></button>
                         <button class="del" onclick="
                             todoList.splice(${i}, 1);
                             makeTudoList();

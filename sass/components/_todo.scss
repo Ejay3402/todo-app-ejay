@@ -1,6 +1,6 @@
 .todo-app {
     margin: 50px auto   ;
-    background: #444;
+    background: #ff1d58;
     color: #f1f1f0;
     padding: 15px 20px;
     width: 98%;
@@ -20,11 +20,12 @@
     .sup {
         margin: 10px auto;
         font-size: 1.5rem;
+        font-size: clamp(1.1rem, 0.929rem + 0.856vw, 1.7rem);
         letter-spacing: 1px;
     }
 
     .app {
-        background: #222;
+        background: #ff5d88;
         color: #f1f1f0;
         border-radius: 20px;
         padding: 15px 10px;
@@ -38,11 +39,13 @@
         
         input {
             width: 100%;
-            border: 1px solid #000;
+            resize: both;
+            border: 1px solid #555;
             padding: 11px 5px;
             margin: 11px auto;
             border-radius: 12px;
             font-size: 1.5rem;
+            font-size: clamp(1rem, 0.896rem + 0.671vw, 1.5rem);
             transition: 500s ease-in;
         }
         input:focus,
@@ -51,6 +54,7 @@
         }
 
         button {
+            font-size: clamp(1.03rem, 0.896rem + 0.671vw, 1.5rem);
             padding: 10px 20px;
             margin: 16px auto;
             display: block;
@@ -69,10 +73,17 @@
         }
     }
 
+    .noTask {
+        margin: 20px auto;
+    }
+
     .todo-list {
+        margin-top: 20px auto;
+        padding: 20px 10px;
         display: block;
         width: 100%;
-        background: #222;
+        background: #e6a3a3;
+        border-radius: 10px;
 
         .box {
             margin: 15px auto;
@@ -90,12 +101,15 @@
                     margin: 15px;
                     font-family: sans-serif;
                     font-size: 1.8rem;
+                    font-size: clamp(1.1rem, 1.029rem + 0.856vw, 1.8rem);
                     span {
-                        font-size: 1.2rem;
+                        font-size: 1rem;
+                        font-size: clamp(1rem, 1.194rem + 0.029vw, 1.22rem);
                     }
                 }
             }
             .con2 {
+                align-items: baseline;
                 button {
                     img {
                         width: 20px;
